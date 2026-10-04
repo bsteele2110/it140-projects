@@ -9,17 +9,46 @@
 
 # TODO 1: Identify the information the movement process needs.
 # Consider the player's current room and movement command.
+SET current_room = "Main Lobby"
+SET rooms = {
+    'Main Lobby': {'North': 'Security Office', 'South': 'Basement Vault', 'East': 'Breakroom', 'West': 'Tech Workshop'},
+    'Security Office': {'South': 'Main Lobby', 'East': 'Executive Suite'},
+    'Executive Suite': {'West': 'Security Office'},
+    'Tech Workshop': {'East': 'Main Lobby'},
+    'Breakroom': {'West': 'Main Lobby'},
+    'Basement Vault': {'North': 'Main Lobby', 'West': 'R&D Lab', 'South': 'Server Room'},
+    'R&D Lab': {'East': 'Basement Vault'},
+    'Server Room': {'North': 'Basement Vault'}
+}
 
 # TODO 2: Prompt for and receive the player's movement command.
-
-# TODO 3: Validate whether the requested movement is possible from the
-# current room. Show the decision clearly.
-
-# TODO 4: Describe what happens when the movement command is valid.
-# Include the room update and player output.
-
-# TODO 5: Describe what happens when the movement command is invalid.
-# Include the output the player should receive.
-
 # TODO 6: Show how movement fits into repeated gameplay.
 # The final game continues accepting commands until a required ending occurs.
+WHILE game_is_running IS True:
+    OUTPUT "You are in " + current_room
+    PROMPT "Enter your move (e.g., 'go South'): "
+    INPUT user_command
+    
+    SET command_parts = SPLIT(user_command, " ")
+    
+    IF LENGTH(command_parts) == 2 AND LOWERCASE(command_parts[0]) == "go":
+        SET direction = CAPITALIZE(command_parts[1])
+        
+        # TODO 3: Validate whether the requested movement is possible from the current room.
+        IF direction IS IN rooms[current_room]:
+            
+            # TODO 4: Describe what happens when the movement command is valid.
+            # Include the room update and player output.
+            SET current_room = rooms[current_room][direction]
+            OUTPUT "You moved to " + current_room
+            
+        ELSE:
+            # TODO 5: Describe what happens when the movement command is invalid.
+            # Include the output the player should receive.
+            OUTPUT "You can't go that way!"
+            
+        ENDIF
+    ELSE:
+        OUTPUT "Invalid command! Use 'go [direction]'."
+    ENDIF
+ENDWHILE
