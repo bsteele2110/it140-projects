@@ -4,49 +4,34 @@
 > Project One deliverable and later becomes a reference for Project Two.
 
 ## Theme and Storyline
-
-**Theme:**
-
-TODO: Name and briefly describe your game's theme.
+**Theme:** Cyberpunk Hackerspace
 
 **Storyline:**
-
-TODO: In one short paragraph, explain the setting, the player's goal, the items
-the player must gather, and the threat created by the villain.
+You are a rogue netrunner attempting to breach Quantum Corp's main server room to upload a virus and shut down their oppressive surveillance network. To succeed, you must explore the facility and gather 6 essential cyber-deck tools before breaching the Server Room. If you enter the Server Room before collecting all 6 tools, the Rogue AI "Odin" will permanently wipe your consciousness.
 
 ## Rooms
-
-Project One requires a minimum of eight rooms.
-
-1. TODO: Start room
-2. TODO: Room
-3. TODO: Room
-4. TODO: Room
-5. TODO: Room
-6. TODO: Room
-7. TODO: Room
-8. TODO: Villain room
-
-Add more rooms if your design needs them.
+1. Main Lobby (Start Room - No items)
+2. Security Office
+3. Tech Workshop
+4. Server Room (Villain Room - AI Odin)
+5. Executive Suite
+6. Breakroom
+7. R&D Lab
+8. Basement Vault
 
 ## Items
-
-With the minimum eight-room design, Project One requires at least six items.
-Every room except the start room and villain room must contain one item.
-
-1. TODO: Item
-2. TODO: Item
-3. TODO: Item
-4. TODO: Item
-5. TODO: Item
-6. TODO: Item
+1. Security Keycard (in Security Office)
+2. Soldering Iron (in Tech Workshop)
+3. Encrypted USB (in Executive Suite)
+4. Energy Drink (in Breakroom)
+5. EMP Grenade (in R&D Lab)
+6. Decryption Deck (in Basement Vault)
 
 If you add rooms beyond the minimum, add an item for every additional room
 except the start room and villain room.
 
 ## Villain
-
-TODO: Identify and briefly describe the villain.
+**Villain:** Odin (Corrupted Rogue AI residing in the Server Room)
 
 ## Storyboard and Map Check
 
