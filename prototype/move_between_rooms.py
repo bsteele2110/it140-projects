@@ -8,15 +8,25 @@ rooms = {
     "Cellar": {"west": "Bedroom"},
 }
 
+# Set the player's starting room.
+current_room = "Great Hall"
 
-# TODO: Set the player's starting room for the simplified prototype.
+# Gameplay loop
+while current_room != "exit":
+    # 1. Display the current room.
+    print(f"\nYou are in the {current_room}.")
 
-# TODO: Create the gameplay loop required by the milestone.
-# Within the loop, complete the required behavior in small steps:
-#   1. Display the current room.
-#   2. Prompt for a movement command or "exit".
-#   3. Branch for a valid move, exit, or invalid input.
-#   4. Update the room only after a valid movement command.
-#   5. Continue until the required exit condition is reached.
+    # 2. Prompt for a movement command or "exit".
+    command = input("Enter direction (north, south, east, west) or 'exit': ").strip().lower()
 
-# TODO: Run and debug all milestone cases in prototype/README.md.
+    # 3. Branching decisions based on command
+    if command == "exit":
+        current_room = "exit"
+    elif command in rooms[current_room]:
+        # Valid direction for the current room
+        current_room = rooms[current_room][command]
+    else:
+        # Invalid direction or unknown command
+        print("Invalid move! Try again.")
+
+print("Thanks for playing!")
